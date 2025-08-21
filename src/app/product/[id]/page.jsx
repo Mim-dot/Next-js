@@ -57,7 +57,7 @@ export default async function page({ params }) {
 
   return (
     <div className="flex justify-center items-start mt-10 px-4">
-      <div className="max-w-3xl w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6">
+      <div className="max-w-3xl w-full bg-white  rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6">
         {/* Product Image */}
         <img
           src={product.image}
@@ -67,28 +67,26 @@ export default async function page({ params }) {
 
         {/* Product Details */}
         <div className="flex-1 flex flex-col gap-4">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            {product.name}
-          </h1>
-          <p className="text-gray-700 dark:text-gray-300">
-            <span className="font-semibold">Brand:</span> {product.brand}
+          <h1 className="text-3xl font-bold text-gray-900 ">{product.name}</h1>
+          <p className="text-gray-700 ">
+            <span className="font-bold ">Brand:</span> {product.brand}
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
-            <span className="font-semibold">Price:</span> ${product.price}
+          <p className="text-gray-700 d">
+            <span className="font-bold">Price:</span> ${product.price}
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-700 ">
             <span className="font-semibold">Weight:</span> {product.weight_gm}{" "}
             gm
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-700 ">
             <span className="font-semibold">Expiring Date:</span>{" "}
             {new Date(product.expiring_date).toLocaleDateString()}
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-700 ">
             <span className="font-semibold">Created At:</span>{" "}
             {new Date(product.createdAt).toLocaleString()}
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-700 ">
             <span className="font-semibold">Updated At:</span>{" "}
             {new Date(product.updatedAt).toLocaleString()}
           </p>
