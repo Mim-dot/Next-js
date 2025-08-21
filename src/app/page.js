@@ -1,12 +1,13 @@
-import Image from "next/image";
-import Hero from "./component/Hero";
-import ProductHighlights from "./component/ProductHighlights";
+import React from 'react'
+import Hero from './components/Hero'
+import Products from './components/(homepageCom)/Products'
 
-export default function Home() {
+
+export default async function Page() {
   return (
-    <div>
-      <Hero />
-      <ProductHighlights />
+    <div className='min-h-screen'>
+      <Hero/>
+      <Products/>
     </div>
-  );
+  )
 }
