@@ -22,6 +22,6 @@ clientPromise = global._mongoClientPromise;
 
 // default export
 export default async function dbConnect(collectionName) {
-  const client = await clientPromise; // wait for connection
+  const client = await clientPromise;
   return client.db(process.env.DB_NAME).collection(collectionName);
 }
