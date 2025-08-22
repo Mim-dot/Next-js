@@ -1,10 +1,14 @@
 "use client";
+
 import Loader from "@/app/components/Loader";
 import No_Data from "@/app/components/No_Data";
 import React, { useEffect, useState } from "react";
 
-export default function SingleProduct({ params }) {
+export default function SingleProduct({ params: paramsProp }) {
+  // Unwrap params if it's a promise
+  const params = React.use(paramsProp);
   const { id } = params;
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -12,14 +16,20 @@ export default function SingleProduct({ params }) {
   useEffect(() => {
     async function fetchProduct() {
       setLoading(true);
+      setError("");
       try {
-        const res = await fetch(`http://localhost:3000/api/product/${id}`, {
+        // Use relative API route or env variable
+        const API_URL = process.env.NEXTAUTH_URL || ""; // e.g., https://your-backend.com
+        const res = await fetch(`${API_URL}/api/product/${id}`, {
           cache: "no-store",
         });
+
         if (!res.ok) {
           setError("Product not found!");
+          setProduct(null);
           return;
         }
+
         const data = await res.json();
         setProduct(data);
       } catch (err) {
@@ -29,6 +39,7 @@ export default function SingleProduct({ params }) {
         setLoading(false);
       }
     }
+
     fetchProduct();
   }, [id]);
 
