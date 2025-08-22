@@ -19,7 +19,7 @@ export default function Navbar() {
             <Link href="/">
               <img
                 className="w-14 rounded-full border-2 border-white"
-                src="/logo.png"
+                src="/public/logo.png"
                 alt="Logo"
               />{" "}
             </Link>
