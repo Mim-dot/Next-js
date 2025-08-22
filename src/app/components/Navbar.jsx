@@ -15,14 +15,7 @@ export default function Navbar() {
     <div>
       <header className="sticky top-0 z-50 px-4 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-red-400 shadow-lg text-white">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="flex justify-center items-center gap-2">
-            <Link href="/">
-              <img
-                className="w-14 rounded-full border-2 border-white"
-                src="/public/logo.png"
-                alt="Logo"
-              />{" "}
-            </Link>
+          <div>
             <h1 className="font-bold text-2xl">Fruit Store</h1>
           </div>
           <div className="flex items-center space-x-5 font-semibold">
