@@ -33,6 +33,6 @@ Follow these steps to run the project locally:
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/fruit_store.git
+git clone https://github.com/Mim-dot/Next-js.git
 cd fruit_store
 ```
